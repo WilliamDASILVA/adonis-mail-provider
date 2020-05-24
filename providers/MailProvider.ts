@@ -14,7 +14,7 @@ export class MailProvider {
   constructor (protected $container: IocContract) {}
 
   public register () {
-    this.$container.singleton('Adonis/Addons/Mail', () => {
+    this.$container.singleton('Changelog/Mail', () => {
       const config = this.$container.use('Adonis/Core/Config').get('mail', {})
       const view = this.$container.use('Adonis/Core/View')
       return new MailManager(this.$container, config, view)

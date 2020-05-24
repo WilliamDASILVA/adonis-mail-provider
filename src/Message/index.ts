@@ -9,6 +9,7 @@
 
 /// <reference path="../../adonis-typings/mail.ts" />
 
+import mjml from 'mjml'
 import { Readable } from 'stream'
 import { EdgeContract } from 'edge.js'
 import { MessageContract, AttachmentOptionsNode, MessageNode, EnvolpeNode } from '@ioc:Adonis/Addons/Mail'
@@ -142,7 +143,8 @@ export class Message implements MessageContract {
    * Compute email html from defined view
    */
   public htmlView (template: string, data?: any): this {
-    this.content.html = this.view.render(template, data)
+    const renderedView = this.view.render(template, data)
+    this.content.html = mjml(renderedView).html
     return this
   }
 

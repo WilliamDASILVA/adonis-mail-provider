@@ -1,5 +1,5 @@
 {
-  "name": "@adonisjs/mail",
+  "name": "changelog-adonis-mail",
   "version": "4.0.0",
   "description": "Mail provider for adonis framework and has support for all common mailing services to send emails",
   "directories": {
@@ -63,6 +63,7 @@
   "dependencies": {
     "@poppinss/manager": "^2.1.4",
     "aws-sdk": "^2.656.0",
+    "mjml": "^4.6.3",
     "nodemailer": "^6.4.3"
   },
   "repository": {
